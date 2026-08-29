@@ -1,0 +1,80 @@
+{
+  "_note": "PLACEHOLDER INVENTORY. These are not real campaigns and no advertiser has approved, reviewed, or paid for any of them. Brand names are used here only as realistic stand-ins while validating the placement format locally. Replace this file entirely before any pilot with a real advertiser.",
+  "_placeholder": true,
+  "campaigns": {
+    "deploy": [
+      {
+        "campaignId": "ph-deploy-001",
+        "creativeId": "ph-deploy-001-a",
+        "advertiser": "Railway",
+        "copy": "Ship your backend without babysitting infrastructure.",
+        "url": "https://railway.app"
+      },
+      {
+        "campaignId": "ph-deploy-002",
+        "creativeId": "ph-deploy-002-a",
+        "advertiser": "Fly.io",
+        "copy": "Run your app close to your users, in every region.",
+        "url": "https://fly.io"
+      }
+    ],
+    "db": [
+      {
+        "campaignId": "ph-db-001",
+        "creativeId": "ph-db-001-a",
+        "advertiser": "Neon",
+        "copy": "Serverless Postgres with branching built for dev workflows.",
+        "url": "https://neon.tech"
+      },
+      {
+        "campaignId": "ph-db-002",
+        "creativeId": "ph-db-002-a",
+        "advertiser": "Supabase",
+        "copy": "Postgres, auth and storage without wiring it all yourself.",
+        "url": "https://supabase.com"
+      }
+    ],
+    "auth": [
+      {
+        "campaignId": "ph-auth-001",
+        "creativeId": "ph-auth-001-a",
+        "advertiser": "Clerk",
+        "copy": "Drop-in auth so you stop hand-rolling session logic.",
+        "url": "https://clerk.com"
+      }
+    ],
+    "observability": [
+      {
+        "campaignId": "ph-obs-001",
+        "creativeId": "ph-obs-001-a",
+        "advertiser": "Sentry",
+        "copy": "Find and fix production issues before your users do.",
+        "url": "https://sentry.io"
+      }
+    ],
+    "testing": [
+      {
+        "campaignId": "ph-test-001",
+        "creativeId": "ph-test-001-a",
+        "advertiser": "Playwright",
+        "copy": "End-to-end tests that survive your next refactor.",
+        "url": "https://playwright.dev"
+      }
+    ],
+    "infra": [
+      {
+        "campaignId": "ph-infra-001",
+        "creativeId": "ph-infra-001-a",
+        "advertiser": "Depot",
+        "copy": "Container builds that finish before your coffee does.",
+        "url": "https://depot.dev"
+      }
+    ]
+  },
+  "fallback": [
+    { "creativeId": "tip-001", "copy": "Tip: Esc twice opens your recent prompts in Claude Code." },
+    { "creativeId": "tip-002", "copy": "Tip: a CLAUDE.md in the repo root is read on every session start." },
+    { "creativeId": "tip-003", "copy": "Tip: /context shows what is filling the current context window." },
+    { "creativeId": "tip-004", "copy": "Tip: shift+tab cycles permission modes without restarting." }
+  ]
+}

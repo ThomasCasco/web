@@ -32,11 +32,27 @@ npm run dev
 
 Open http://localhost:3000.
 
+## Claude Code adapter
+
+`adapters/claude-code/` is the first adapter running against a real agent
+rather than a simulated lifecycle. Claude Code hooks produce the normalized
+lifecycle events, intent is classified on-device, and a labeled placement is
+rendered in the status line only while a turn is active.
+
+```bash
+node adapters/claude-code/install.js   # print the settings to add
+npm run test:adapter
+```
+
+See `adapters/claude-code/README.md` for the privacy boundary and how to
+drive a turn by hand.
+
 ## Next milestones
 
 - Replace simulated task lifecycle with real Codex event ingestion.
+- Serve creatives from an ad server instead of the adapter's local file.
 - Add authentication and persistent sessions.
 - Add advertiser campaigns and frequency caps.
 - Add fraud-resistant impression verification.
 - Add payout ledger.
-- Add adapters for Claude Code and Gemini CLI.
+- Add adapters for Codex and Gemini CLI.

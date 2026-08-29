@@ -15,7 +15,10 @@ WaitAds is an opt-in monetization layer for AI coding-agent wait time. While an 
 
 ## MVP architecture
 - `app/`: Next.js web dashboard and prototype UI.
-- Current lifecycle is simulated in the browser.
+- `adapters/claude-code/`: first real agent adapter. Claude Code hooks emit the
+  normalized events below, intent is classified on-device, and the placement is
+  rendered in the status line only while a turn is active.
+- The browser lifecycle in `app/` is still simulated; the adapter is not.
 - Next step is a server-side event ingestion boundary with normalized events:
   - `agent.turn.started`
   - `agent.activity.updated`
@@ -27,11 +30,17 @@ WaitAds is an opt-in monetization layer for AI coding-agent wait time. While an 
 ## Immediate engineering tasks
 1. Extract the simulated agent state into a typed adapter interface.
 2. Add a mock adapter implementation used by the existing demo.
-3. Define normalized agent event TypeScript types.
+3. Define normalized agent event types. *(Done for the adapter in
+   `adapters/claude-code/src/events.js`; the web app still needs to consume
+   the same shapes.)*
 4. Add API routes for starting/completing a demo session.
-5. Define sponsor campaign and impression types.
+5. Define sponsor campaign and impression types. *(Sponsor decision shape is
+   implemented in `adapters/claude-code/src/creatives.js`.)*
 6. Add a simple in-memory eligibility/frequency-cap service for the prototype.
+   *(Per-category frequency cap and a 3s viewability threshold now exist in
+   the adapter; not yet shared with the web app.)*
 7. Keep the UI functional throughout each change.
+8. Point `app/` at the adapter's real ledger instead of simulated counters.
 
 ## Real Codex integration research target
 Build a Codex adapter around supported programmatic Codex execution/event APIs. Do not scrape or inject into the official Codex UI. The adapter should translate Codex lifecycle events into the normalized WaitAds event model.
